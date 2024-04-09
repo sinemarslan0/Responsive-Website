@@ -5,31 +5,84 @@
 
 /* Mobile */
 @media only screen and (max-width: 600px) {
+  .header .logo {
+    margin-right: 15px;
+  }
+  .header h1 {
+    display: none;
+  }
+  .header .menu-icon {
+    display: flex;
+    margin-right: 50px;
+  }
+  .header .right-desktop-nav {
+    display: none;
+  }
   .container {
     display: flex;
     flex-direction: column;
   }
+  .footer {
+    position: relative;
+  }
+  .footer .middle h1 {
+    visibility: hidden;
+  }
+  .footer .mobile-nav {
+    display: none;
+  }
 }
 /* Tablet */
 @media only screen and (min-width: 601px) and (max-width: 1023px) {
+  .header .logo {
+    margin-right: 15px;
+  }
+  .header h1 {
+    margin-right: auto;
+  }
+  .header .menu-icon {
+    display: flex;
+    margin-right: 50px;
+  }
+  .header .right-desktop-nav {
+    display: none;
+  }
   .container {
     display: flex;
     flex-wrap: wrap;
   }
-  .box {
+  .container .box {
     flex: 1;
   }
-  .box:nth-child(1) {
+  .container .box:nth-child(1) {
     flex-basis: 100%;
+  }
+  .footer {
+    position: relative;
   }
 }
 /* Desktop */
 @media only screen and (min-width: 1024px) {
+  .header .logo {
+    margin-right: 15px;
+  }
+  .header h1 {
+    margin-right: auto;
+  }
+  .header .menu-icon {
+    display: none;
+  }
+  .header .right-desktop-nav {
+    display: flex;
+  }
   .container {
     display: flex;
   }
   .box {
     flex: 1;
+  }
+  .footer {
+    bottom: 0;
   }
 }
 body {
@@ -48,23 +101,32 @@ header {
   align-items: center;
 }
 
-nav.right ul {
-  list-style: none;
-  display: flex;
-}
-
-nav.right li {
-  margin-right: 30px;
-}
-
-nav.right a {
+.right-desktop-nav a {
   text-decoration: none;
   color: #272727;
   font-size: 16px;
   font-weight: 400;
 }
-nav.right a:hover {
+.right-desktop-nav a:hover {
   text-decoration: underline;
+}
+.right-desktop-nav li {
+  margin-right: 30px;
+}
+.right-desktop-nav ul {
+  list-style: none;
+  display: flex;
+}
+
+.icons {
+  color: black;
+  background-color: rgb(232, 228, 204);
+  border-radius: 5px;
+  border: 1px solid black;
+  position: absolute;
+  cursor: pointer;
+  font-size: 30px;
+  display: flex;
 }
 
 .container {
@@ -105,10 +167,6 @@ nav.right a:hover {
   margin: 0;
 }
 
-.mobile-nav {
-  display: none;
-}
-
 footer {
   background-color: rgb(232, 228, 204);
   font-size: 16px;
@@ -121,23 +179,4 @@ footer {
 }
 footer p:last-child {
   font-weight: 600;
-}
-@media only screen and (min-width: 1024px) {
-  footer {
-    position: fixed;
-    bottom: 0;
-  }
-}
-@media only screen and (min-width: 601px) and (max-width: 1023px) {
-  footer {
-    position: relative;
-  }
-}
-@media only screen and (max-width: 600px) {
-  footer {
-    position: relative;
-  }
-  footer .middle h1 {
-    visibility: hidden;
-  }
 }/*# sourceMappingURL=main.css.map */

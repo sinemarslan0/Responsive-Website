@@ -1,6 +1,6 @@
 @import "./variables";
 @import "./config";
-
+@import "./responsive";
 
 body {
     background: white;
@@ -18,25 +18,37 @@ header {
     align-items: center;
 }
 
-nav.right ul {
-    list-style: none;
+.right-desktop-nav {
+    a {
+        text-decoration: none;
+        color: $primary-color;
+        font-size: $default-font-size;
+        font-weight: map-get($font-weights, regular);
+        
+        &:hover {
+            text-decoration: underline; 
+        }
+    }
+    li {
+        margin-right: 30px;
+    }
+    ul {
+        list-style: none;
+        display: flex;
+    }
+}
+
+.icons {
+    color: black;
+    background-color: rgb(232,228,204);
+    border-radius: 5px;
+    border: 1px solid black;
+    position: absolute;
+    cursor: pointer;
+    font-size: 30px;
     display: flex;
 }
 
-nav.right li {
-    margin-right: 30px;
-}
-
-nav.right a {
-    text-decoration: none;
-    color: $primary-color;
-    font-size: $default-font-size;
-    font-weight: map-get($font-weights, regular);
-    
-    &:hover {
-        text-decoration: underline; 
-    }
-}
 
 .container {
     display: flex;
@@ -81,11 +93,6 @@ nav.right a {
     }
 }
 
-
-.mobile-nav {
-    display: none;
-}
-  
 footer {
     background-color: rgb(232, 228, 204);
     font-size: $default-font-size;
@@ -100,24 +107,4 @@ footer {
             font-weight: map-get($font-weights, medium);
         }
     }
-
-    @media only screen and (min-width: 1024px) {
-        position: fixed;
-        bottom: 0;
-    }
-
-    @media only screen and (min-width: 601px) and (max-width: 1023px) {
-        position: relative;
-    }
-
-    @media only screen and (max-width: $smartphone){
-        position: relative;
-
-        .middle h1 {
-            visibility: hidden;
-        }
-    }
-
 }
-  
-
